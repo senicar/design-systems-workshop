@@ -60,7 +60,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-8be9eb45d199398cb2bfd1c7a21da8dab20f1d57e31b8bd148b6ef548b589ccf414a9c2595034c6f6e56f4d6c26c17fed4452ccc4cbc2ae3e4e9862cc791d183",
+            "id": "component-ButtonComponent-df7bc39e105670fa0d8f166c34e2874c161258842d025716bb1c6124b81f360ce7d6075c7afc2b319720176d781048a50167c728816364a93512bd5d37b0120a",
             "file": "src/app/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -82,7 +82,7 @@
                     "defaultValue": "'Button Label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
@@ -91,8 +91,8 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
-                    "type": "\"primary\" | \"secondary\"",
+                    "line": 17,
+                    "type": "ButtonType",
                     "decorators": []
                 }
             ],
@@ -105,7 +105,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -114,10 +114,10 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
+            "description": "<p>This is the button component. It can be used to build clicky things!</p>\n<p>See <a href=\"https://www.figma.com/file/X1JRLUCEp6JnoeKAxRPNeF/Angular-Architects-Design-Systems?node-id=1%3A3\">Figma reference</a> for specifications.</p>\n",
+            "rawdescription": "\n\nThis is the button component. It can be used to build clicky things!\n\nSee [Figma reference](https://www.figma.com/file/X1JRLUCEp6JnoeKAxRPNeF/Angular-Architects-Design-Systems?node-id=1%3A3) for specifications.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() public label: string = 'Button Label';\n  @Input() public type: 'primary' | 'secondary' = 'primary';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport type ButtonType = 'primary' | 'secondary';\n\n/**\n * This is the button component. It can be used to build clicky things!\n *\n * See [Figma reference](https://www.figma.com/file/X1JRLUCEp6JnoeKAxRPNeF/Angular-Architects-Design-Systems?node-id=1%3A3) for specifications.\n */\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() public label: string = 'Button Label';\n  @Input() public type: ButtonType = 'primary';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -132,7 +132,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 10
+                "line": 17
             },
             "implements": [
                 "OnInit"
@@ -289,7 +289,19 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\"",
+                "file": "src/app/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/test.ts": [
@@ -362,11 +374,25 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/app/button/button.component.ts": [
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\"",
+                    "file": "src/app/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
-        "count": 0,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -383,8 +409,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coveragePercent": 20,
+                "coverageCount": "1/5",
                 "status": "low"
             },
             {
