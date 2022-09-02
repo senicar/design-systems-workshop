@@ -10,7 +10,7 @@ type FormLayoutProps = {
 const Template: Story<FormLayoutComponent & FormLayoutProps> = (args) => ({
   props: { args },
   template: `
-  <legend>{{args.myControl}}</legend>
+  <legend>{{args.gitmyControl}}</legend>
   <app-form-layout [columns]="args.columns">
     <app-form-element label="Username"></app-form-element>
     <app-form-element label="Password" type="password"></app-form-element>
