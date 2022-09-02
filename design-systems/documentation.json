@@ -121,7 +121,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "button {\n  background: #0085fc;\n\n  border: 1px solid #0357a3;\n  box-sizing: border-box;\n  box-shadow: inset 0px 2px 0px rgba(202, 230, 255, 0.15);\n  border-radius: 5px;\n\n  font-family: \"SF Pro Display\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: 600;\n  font-size: 13px;\n  line-height: 16px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n\n  color: #ffffff;\n\n  padding: 11px 16px;\n\n  &.primary {\n    background: #0085fc;\n    border: 1px solid #0357a3;\n  }\n\n  &.secondary {\n    background: #e4e8f3;\n    border: 1px solid #cbd0e1;\n    color: #041c31;\n  }\n}\n",
+                    "data": "@import \"../../styles/colors\";\n\nbutton {\n  background: $blue-400;\n\n  border: 1px solid $blue-700;\n  box-sizing: border-box;\n  box-shadow: inset 0px 2px 0px rgba(202, 230, 255, 0.15);\n  border-radius: 5px;\n\n  font-family: \"SF Pro Display\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: 600;\n  font-size: 13px;\n  line-height: 16px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n\n  color: #ffffff;\n\n  padding: 11px 16px;\n\n  &.primary {\n    background: $blue-400;\n    border: 1px solid $blue-700;\n  }\n\n  &.secondary {\n    background: $gray-100;\n    border: 1px solid $gray-200;\n    color: $text-color;\n  }\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
