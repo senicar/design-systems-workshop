@@ -1,6 +1,30 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "Chainable",
+            "id": "interface-Chainable-9377f527ba7ac7be80bb7032b52923458edd66a40b3ecac58a8566e80f3028bab0bda1678b6dad956e7d4bef545d0ca4a7fee7ea6e5220625bb0baa831076c51",
+            "file": "cypress/support/component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import './commands'\n\n// Alternatively you can use CommonJS syntax:\n// require('./commands')\n\nimport { mount } from 'cypress/angular'\n\n// Augment the Cypress namespace to include type definitions for\n// your custom command.\n// Alternatively, can be defined in cypress/support/component.d.ts\n// with a <reference path=\"./component\" /> at the top of your spec.\ndeclare global {\n  namespace Cypress {\n    interface Chainable {\n      mount: typeof mount\n    }\n  }\n}\n\nCypress.Commands.add('mount', mount)\n\n// Example use:\n// cy.mount(MyComponent)\n",
+            "properties": [
+                {
+                    "name": "mount",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
@@ -187,13 +211,13 @@
         },
         {
             "name": "ButtonModule",
-            "id": "module-ButtonModule-9d1a08c6a1bb7b6287d44c11d677aeb0dc969528110d9fdfc8537a68c669c8ad4793732a71f43e63dd3d6e97edc2ec33ddfd43aa2f21572695f5ccf2e2debc15",
+            "id": "module-ButtonModule-09baf7c1f36db99d346bca37b7c56f05e73977143b3c2735e86fac237c9bb4e9aac5b5926674fc49d314eff763f71e32152e4a6f66d4124ee512f68d70a71729",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/button/button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ]\n})\nexport class ButtonModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [CommonModule],\n  exports: [ButtonComponent],\n})\nexport class ButtonModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -213,7 +237,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -395,6 +423,15 @@
         "count": 2,
         "status": "low",
         "files": [
+            {
+                "filePath": "cypress/support/component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Chainable",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
