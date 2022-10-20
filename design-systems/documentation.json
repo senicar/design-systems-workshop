@@ -271,6 +271,66 @@
             "templateData": "<button>{{ label }}</button>\n"
         },
         {
+            "name": "ExampleComponent",
+            "id": "component-ExampleComponent-d66da8fff7b23b0066983557776ebeab61a003cd12e7b9dec2b17c7cb7433365b1b5ef99f971648b48e5307d24368219f03862a34de4a5d950f8dd455cda817f",
+            "file": "src/app/example/example.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "example",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<app-button (click)=\"clickHandler($event)\"></app-button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "clickHandler",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {moduleMetadata, Story} from '@storybook/angular';\nimport {Component} from \"@angular/core\";\nimport {ButtonModule} from \"../button/button.module\";\n\n@Component({\n  selector: 'example',\n  template: `<app-button (click)=\"clickHandler($event)\"></app-button>`,\n  styles: []\n})\nclass ExampleComponent {\n  clickHandler(event: Event) {\n    if(confirm(\"Do you want to say hello?\")) {\n      console.log(\"Hello!!\");\n    }\n  }\n}\n\nconst Template: Story = (args) => ({\n  props: args\n});\n\nexport default {\n  title: 'Components/Example',\n  component: ExampleComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonModule],\n    }),\n  ],\n};\n\nexport const Basic = Template.bind({});\nBasic.args = {};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
             "file": "src/stories/header.component.ts",
@@ -471,13 +531,13 @@
         },
         {
             "name": "ButtonModule",
-            "id": "module-ButtonModule-9d1a08c6a1bb7b6287d44c11d677aeb0dc969528110d9fdfc8537a68c669c8ad4793732a71f43e63dd3d6e97edc2ec33ddfd43aa2f21572695f5ccf2e2debc15",
+            "id": "module-ButtonModule-b48a171197f91cb3a8a99bcc8ecafee613ab0ba4283f1f2571839195c05638fb630b95ada87fc8ff66f38af5ef0596f44c947b318c6aaaab21ca4247b7a7f3d2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/button/button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ]\n})\nexport class ButtonModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [ButtonComponent]\n})\nexport class ButtonModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -512,6 +572,16 @@
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/example/example.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
             {
                 "name": "context",
                 "ctype": "miscellaneous",
@@ -645,6 +715,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -665,11 +745,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/app/example/example.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args\n})"
             },
             {
                 "name": "Template",
@@ -686,6 +766,28 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/example/example.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/example/example.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/example/example.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props: args\n})"
+                }
+            ],
             "src/test.ts": [
                 {
                     "name": "context",
@@ -909,6 +1011,35 @@
             },
             {
                 "filePath": "src/app/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/example/example.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/example/example.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/example/example.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
